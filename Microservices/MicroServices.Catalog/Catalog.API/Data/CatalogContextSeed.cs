@@ -55,6 +55,7 @@ namespace Catalog.API.Data
                     Category = "Smart Phone"
                 }
             };
+            return products;
         }
     }
 }
