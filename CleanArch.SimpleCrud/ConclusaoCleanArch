@@ -1,0 +1,23 @@
+Princípios da Arquitetura Limpa:
+
+Testabilidade:
+Por ser dividida em camadas, as regras de negócio podem ser testadas sem interferir na interface do usuário, banco de dados, servidor ou qualquer outro elemento externo.
+
+
+Independência de Framework:
+A arquitetura não depende da existência de nenhuma ferramenta externa a linguagem, como bibliotecas.
+
+Independência de Interface:
+Assim como as regras de negócio podem ser testadas sem interferir em nenhum outro componente do sistema, 
+a interface também pode ser alterada com facilidade. Uma UI da Web pode ser substituída por uma UI do console, por exemplo, sem alterar as regras de negócio.
+
+
+Independência de Banco:
+Como as camadas do projeto operam de forma independente, as regras de negócio também podem não ter vínculo com o banco dados do sistema. 
+Com isso, é possível trocar o Oracle ou SQL Server, por Mongo, BigTable, CouchDB ou qualquer outro.
+
+
+Independência de Elementos externos:
+Na verdade, suas regras de negócios simplesmente não sabem nada sobre o mundo exterior, não estão ligadas a nenhum Framework.
+
+As dependências apontam sempre para o nível mais alto. (De dentro p fora) 
