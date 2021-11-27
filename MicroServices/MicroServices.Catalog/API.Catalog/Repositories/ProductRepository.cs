@@ -1,13 +1,13 @@
-﻿using Catalog.API.Data;
-using Catalog.API.Entities;
+﻿using API.Catalog.Data;
+using API.Catalog.Entities;
 using MongoDB.Driver;
 
-namespace Catalog.API.Repositories
+namespace API.Catalog.Repositories
 {
     public class ProductRepository : IProductRepository
     {
         private readonly ICatalogContext _context;
-        public ProductRepository(ICatalogContext context) => this._context = context;   
+        public ProductRepository(ICatalogContext context) => this._context = context;
         public async Task CreateProduct(Product product)
         {
             await _context.Products.InsertOneAsync(product);
@@ -17,7 +17,7 @@ namespace Catalog.API.Repositories
         {
             FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(p => p.Id, id);
             DeleteResult deleteResult = await _context.Products.DeleteOneAsync(filter);
-            return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;    
+            return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;
         }
 
         public async Task<Product> GetProduct(string id)

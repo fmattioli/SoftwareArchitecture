@@ -1,11 +1,11 @@
-﻿using Catalog.API.Entities;
+﻿using API.Catalog.Entities;
 using MongoDB.Driver;
 
-namespace Catalog.API.Data
+namespace API.Catalog.Data
 {
     public class CatalogContext : ICatalogContext
     {
-        public IMongoCollection<Product> Products {get;}
+        public IMongoCollection<Product> Products { get; }
         public CatalogContext(IConfiguration configuration)
         {
             var client = new MongoClient(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
@@ -14,6 +14,5 @@ namespace Catalog.API.Data
 
             CatalogContextSeed.SeedData(Products);
         }
-        
     }
 }

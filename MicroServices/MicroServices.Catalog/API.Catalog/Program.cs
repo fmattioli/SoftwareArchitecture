@@ -1,9 +1,10 @@
-using Catalog.API.Data;
-using Catalog.API.Repositories;
+using API.Catalog.Data;
+using API.Catalog.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
