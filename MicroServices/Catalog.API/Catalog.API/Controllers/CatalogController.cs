@@ -1,9 +1,10 @@
-﻿using API.Catalog.Entities;
-using API.Catalog.Repositories;
+﻿using Catalog.API.Entities;
+using Catalog.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Catalog.Controllers
+namespace Catalog.API.Controllers
 {
+
     [Route("api/v1/[controller]")]
     [ApiController]
     public class CatalogController : ControllerBase
@@ -76,5 +77,6 @@ namespace API.Catalog.Controllers
         {
             return Ok(await _repository.DeleteProduct(id));
         }
+
     }
 }

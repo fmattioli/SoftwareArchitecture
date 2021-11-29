@@ -1,8 +1,8 @@
-﻿using API.Catalog.Data;
-using API.Catalog.Entities;
+﻿using Catalog.API.Data;
+using Catalog.API.Entities;
 using MongoDB.Driver;
 
-namespace API.Catalog.Repositories
+namespace Catalog.API.Repositories
 {
     public class ProductRepository : IProductRepository
     {

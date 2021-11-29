@@ -1,7 +1,7 @@
-﻿using API.Catalog.Entities;
+﻿using Catalog.API.Entities;
 using MongoDB.Driver;
 
-namespace API.Catalog.Data
+namespace Catalog.API.Data
 {
     public class CatalogContextSeed
     {
@@ -58,5 +58,5 @@ namespace API.Catalog.Data
             return products;
         }
     }
-}
 
+}

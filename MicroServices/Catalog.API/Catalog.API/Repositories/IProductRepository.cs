@@ -1,6 +1,6 @@
-﻿using API.Catalog.Entities;
+﻿using Catalog.API.Entities;
 
-namespace API.Catalog.Repositories
+namespace Catalog.API.Repositories
 {
     public interface IProductRepository
     {
@@ -12,4 +12,5 @@ namespace API.Catalog.Repositories
         Task<bool> UpdateProduct(Product product);
         Task<bool?> DeleteProduct(string id);
     }
+
 }
