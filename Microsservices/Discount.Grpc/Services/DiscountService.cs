@@ -54,7 +54,7 @@ namespace Discount.Grpc.Services
             return couponModel;
         }
 
-        public override async Task<DeleteDiscountRequest> DeleteDiscount(DeleteDiscountRequest request, ServerCallContext context)
+        public override async Task<DeleteDiscountResponse> DeleteDiscount(DeleteDiscountRequest request, ServerCallContext context)
         {
             var deleted = await _repository.DeleteDiscount(request.ProductName);
             var response = new DeleteDiscountResponse

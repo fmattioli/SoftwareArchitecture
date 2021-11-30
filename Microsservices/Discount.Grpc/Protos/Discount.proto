@@ -7,7 +7,7 @@ service DiscountProtoService{
 
 	rpc CreateDiscount(CreateDiscountRequest) returns (CouponModel);
 	rpc UpdateDiscount(UpdateDiscountRequest) returns (CouponModel);
-	rpc DeleteDiscount(DeleteDiscountRequest) returns (DeleteDiscountRequest);
+	rpc DeleteDiscount(DeleteDiscountRequest) returns (DeleteDiscountResponse);
 }
 
 message GetDiscountRequest{
