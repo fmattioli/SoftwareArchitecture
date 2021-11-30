@@ -18,7 +18,7 @@ namespace Basket.API.Controllers
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        [HttpGet("{username}", Name = "GetBasket")]
+        [HttpGet("{userName}", Name = "GetBasket")]
         public async Task<ActionResult<ShoppingCart>> GetBasket(string userName)
         {
             var basket = await _repository.GetBasket(userName);
@@ -31,7 +31,7 @@ namespace Basket.API.Controllers
             return Ok(await _repository.UpdateBasket(basket));
         }
 
-        [HttpDelete("{username}", Name = "DeleteBasket")]
+        [HttpDelete("{userName}", Name = "DeleteBasket")]
         public async Task<IActionResult> DeleteBasket(string userName)
         {
             await _repository.DeleteBasket(userName);

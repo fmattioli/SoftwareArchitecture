@@ -21,7 +21,8 @@ namespace Basket.API.Repositories
             if (string.IsNullOrEmpty(basket))
                 return null;
 
-            return JsonSerializer.Deserialize<ShoppingCart>(basket); 
+            return JsonSerializer.Deserialize<ShoppingCart>(basket);
+
         }
 
 
@@ -36,7 +37,7 @@ namespace Basket.API.Repositories
             await _redisCache.RemoveAsync(userName);
         }
 
-      
+
 
     }
 }
