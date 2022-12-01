@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TrackR.Shipping.Orders.Core\TrackR.Shipping.Orders.Core.csproj" />
+    <ProjectReference Include="..\TrackR.Shipping.Orders.Infrastructure\TrackR.Shipping.Orders.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

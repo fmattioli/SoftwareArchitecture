@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TrackR.Shipping.Orders.Application\TrackR.Shipping.Orders.Application.csproj" />
+    <ProjectReference Include="..\TrackR.Shipping.Orders.Core\TrackR.Shipping.Orders.Core.csproj" />
+    <ProjectReference Include="..\TrackR.Shipping.Orders.Infrastructure\TrackR.Shipping.Orders.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
