@@ -1,17 +1,21 @@
 ﻿namespace TrackR.Shipping.Orders.API.Controllers
 {
+    using KafkaFlow;
+    using KafkaFlow.Producers;
     using Microsoft.AspNetCore.Mvc;
     using TrackR.Shipping.Orders.Application.InputModels;
     using TrackR.Shipping.Orders.Application.Services;
 
     [ApiController]
     [Route("api/shipping-orders")]
-    public class ShippingOrdersController : ControllerBase
+    public class ShippingOrdersController : Controller
     {
+        private readonly IProducerAccessor commandProducer;
+       
         private readonly IShippingOrderService _service;
-        public ShippingOrdersController(IShippingOrderService service)
+        public ShippingOrdersController(IProducerAccessor commandProducer)
         {
-            _service = service;
+            this.commandProducer = commandProducer;
         }
 
         [HttpGet("{code}")]
@@ -27,12 +31,13 @@
         [HttpPost]
         public async Task<IActionResult> Post(AddShippingOrderInputModel model)
         {
-            var code = await _service.Add(model);
-            return CreatedAtAction(
-                nameof(GetByCode),
-                new { code },
-                model
-            );
+            var producer = commandProducer.GetProducer("say-hello");
+            await producer.ProduceAsync(
+                   "sample-topic",
+                   Guid.NewGuid().ToString(),
+                   new HelloMessage { Text = "Hello!" });
+
+            return Ok(model);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace TrackR.Shipping.Orders.Infrastructure
             {
                 var configuration = sp.GetService<IConfiguration>();
                 var options = new MongoDbOptions();
-                configuration?.GetSection("Mongo").Bind(options);
+                configuration?.GetSection("MongoSettings").Bind(options);
                 return options;
             });
 

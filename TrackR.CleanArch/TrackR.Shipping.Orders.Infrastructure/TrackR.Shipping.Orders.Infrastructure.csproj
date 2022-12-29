@@ -17,4 +17,8 @@
     <PackageReference Include="MongoDB.Driver.Core" Version="2.18.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Kafka\" />
+  </ItemGroup>
+
 </Project>
